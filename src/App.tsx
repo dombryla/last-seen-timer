@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Timer} from "./components/Timer"
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
+  const [initialTime, setInitialTime] = React.useState<number | undefined>(undefined)
+  const [timer, setTimer] = React.useState<number | undefined>(undefined)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input type="number" className="input" placeholder='Type a time' value={initialTime} onChange={(e) => setInitialTime(Number(e.target.value))} />
+      <button className="button" onClick={() => setTimer(initialTime)}>Start timer</button>
+      {timer && <Timer lastSeen={timer!}></Timer>}
     </div>
   );
 }
 
 export default App;
+
+
