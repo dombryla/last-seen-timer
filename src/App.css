@@ -36,12 +36,12 @@
   outline: none;
   border-radius: 5px;
   border: 2px solid white;
-  background: #E13423;
+  background: #001E28;
   font-size: 2rem;
 }
 .button:hover {
   background: #fff;
-  color: #E13423
+  color: #001E28
 }
 
 
