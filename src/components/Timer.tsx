@@ -17,9 +17,7 @@ export const Timer: React.FC<TimerProps> = React.memo(({lastSeen}) =>{
     return () => clearInterval(interval)
   }, [lastSeen])
 
-  return(
-    <View message={message}></View>
-  )
+  return <View message={message}></View>
 })
 
 type ViewProps = {
